@@ -1,9 +1,9 @@
 import React from "react";
-import "./styles/App.css";
+import "./styles/index.css";
 
 function App() {
   return (
-    <div className="App">
+    <div className={`text-3xl text-blue-600 font-bold underline`}>
       test
     </div>
   );
