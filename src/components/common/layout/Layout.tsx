@@ -1,11 +1,10 @@
 import React from "react";
 
-type Props = {
-  children: JSX.Element
+interface Props {
+  children: JSX.Element;
 }
 
-const Layout = (children: Props) => {
-
+const Layout = ({children}: Props) => {
   return (
     <>
       {/*<Header/>*/}
