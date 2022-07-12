@@ -7,13 +7,17 @@ const Card = ({abbreviation, name}: Props) => {
   return (
     <li>
       <div>
-        <p>
-          {abbreviation}
-        </p>
+        <div>
+          <div>
+            <p>
+              {abbreviation}
+            </p>
+          </div>
+        </div>
+        <h2>
+          {name}
+        </h2>
       </div>
-      <h2>
-        {name}
-      </h2>
     </li>
   );
 };
