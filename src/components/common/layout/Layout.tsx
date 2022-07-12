@@ -1,4 +1,5 @@
 import React from "react";
+import Header from "../header";
 
 interface Props {
   children: JSX.Element;
@@ -7,7 +8,7 @@ interface Props {
 const Layout = ({children}: Props) => {
   return (
     <>
-      {/*<Header/>*/}
+      <Header/>
       {children}
     </>
   );
