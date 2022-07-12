@@ -1,7 +1,7 @@
-const Card = () => {
+const Card = (children: any) => {
   return (
     <li>
-      team
+      {children}
     </li>
   )
 }
