@@ -1,9 +1,21 @@
-const Card = (children: any) => {
+interface Props {
+  abbreviation: string;
+  name: string;
+}
+
+const Card = ({abbreviation, name}: Props) => {
   return (
     <li>
-      {children}
+      <div>
+        <p>
+          {abbreviation}
+        </p>
+      </div>
+      <h2>
+        {name}
+      </h2>
     </li>
-  )
-}
+  );
+};
 
 export default Card;

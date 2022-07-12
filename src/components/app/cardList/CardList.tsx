@@ -1,6 +1,7 @@
+import {v4 as uuid} from "uuid";
 import {useEffect, useState} from "react";
 import TeamService from "../../../services/TeamService";
-// import Card from "../card";
+import Card from "../card";
 
 const CardList = () => {
   const [teams, setTeams] = useState([]);
@@ -25,7 +26,11 @@ const CardList = () => {
           {
             teams &&
             teams.map((team: any, index: number) => (
-              <li key={index}>{team.abbreviation}</li>
+              <Card
+                abbreviation={team.abbreviation}
+                key={uuid()}
+                name={team.full_name}
+              />
             ))
           }
         </ul>
