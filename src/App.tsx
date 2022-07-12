@@ -1,12 +1,15 @@
 import React from "react";
+import Layout from "./components/common/layout";
 import "./styles/index.css";
 
-function App() {
+const App = () => {
   return (
-    <div className={`text-3xl text-blue-600 font-bold underline`}>
-      test
-    </div>
+    <Layout>
+      <main>
+        main content
+      </main>
+    </Layout>
   );
-}
+};
 
 export default App;
