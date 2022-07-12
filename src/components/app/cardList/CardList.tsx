@@ -1,13 +1,15 @@
+import Card from "../card";
+
 const CardList = () => {
   return (
     <div>
       <div>
         <ul>
-          card list
+          <Card/>
         </ul>
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default CardList
+export default CardList;
