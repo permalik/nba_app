@@ -17,23 +17,19 @@ const Content = ({
   return (
     <>
       <header>
-        <h4>GAMEDATE{date}</h4>
+        <h4>Game: {date}</h4>
       </header>
       <section>
-        <p>H:
-          <span>
-                  -{homeAbbreviation}
-                </span>
+        <p>
+          Home: <span>{homeAbbreviation}</span>
         </p>
-        <p>V:
-          <span>
-                  -{visitorAbbreviation}
-                </span>
+        <p>
+          Visitor: <span>{visitorAbbreviation}</span>
         </p>
       </section>
       <section>
-        <p>-{homeScore}</p>
-        <p>-{visitorScore}</p>
+        <p>H-{homeScore}</p>
+        <p>V-{visitorScore}</p>
       </section>
     </>
   );

@@ -11,22 +11,37 @@ class ITeam {
   name!: string;
 }
 
-
+class IGame {
+  date!: string;
+  homeAbbreviation!: string;
+  homeScore!: number;
+  visitorAbbreviation!: string;
+  visitorScore!: number;
+}
 
 const CardList = () => {
   const [teams, setTeams] = useState([]);
   const [team, setTeam] = useState("");
   const [isShown, setIsShown] = useState(false);
   const [games, setGames] = useState<any[]>([]);
-  const [date, setDate] = useState("");
 
   const handleClick = () => {
     setIsShown(current => !current);
   };
 
   const handleMultiple = (item: any) => {
-    setTeam(item.abbreviation);
-    handleClick();
+    const handleState = async () => {
+      try {
+        setTeam("");
+        await setTeam(item);
+        console.log(item);
+        console.log(team);
+        handleClick();
+      } catch (e) {
+        console.log(e);
+      }
+    };
+    handleState();
   };
 
   const teamParser = ((array: any) => {
@@ -39,12 +54,26 @@ const CardList = () => {
     return newTeam;
   });
 
+  const gameParser = ((array: any) => {
+    let newGame = array.map((item: any, index: number) => {
+      const game = new IGame();
+      game.date = item.date.split("T")[0];
+      game.homeAbbreviation = item.home_team.abbreviation;
+      game.homeScore = item.home_team_score;
+      game.visitorAbbreviation = item.visitor_team.abbreviation;
+      game.visitorScore = item.visitor_team_score;
+      return game;
+    });
+    return newGame;
+  });
+
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const result = await GameService.getGames();
-        setGames(result.data.data);
-        // console.log(result.data.data);
+        const result = await TeamService.getTeams();
+        let newTeam = teamParser(result.data.data);
+        setTeams(newTeam);
+        // console.log(newTeam);
       } catch (e) {
         console.log(e);
       }
@@ -55,10 +84,10 @@ const CardList = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const result = await TeamService.getTeams();
-        let newTeam = teamParser(result.data.data)
-        setTeams(newTeam);
-        console.log(newTeam);
+        const result = await GameService.getGames();
+        let newGame = gameParser(result.data.data);
+        setGames(newGame);
+        // console.log(newGame);
       } catch (e) {
         console.log(e);
       }
@@ -73,26 +102,24 @@ const CardList = () => {
           isShown
           &&
             <Modal toggleOpen={handleClick}>
-              {/*{*/}
-              {/*  games*/}
-              {/*  &&*/}
-              {/*  games.map((game: any, index: number) => (*/}
-              {/*    team === game.home_team.abbreviation*/}
-              {/*      ?*/}
-              {/*      (*/}
-              {/*        <Content*/}
-              {/*          date={game.date}*/}
-              {/*          homeAbbreviation={game.home_team.abbreviation}*/}
-              {/*          homeScore={game.home_team}*/}
-              {/*          key={index}*/}
-              {/*          visitorAbbreviation={game.visitor_team.abbreviation}*/}
-              {/*          visitorScore={game.visitorScore}*/}
-              {/*        />*/}
-              {/*      )*/}
-              {/*      :*/}
-              {/*      null*/}
-              {/*  ))*/}
-              {/*}*/}
+              {
+                games.map((game: any, index: number) => (
+                  team === game.homeAbbreviation
+                    ?
+                    (
+                      <Content
+                        date={game.date}
+                        homeAbbreviation={game.homeAbbreviation}
+                        homeScore={game.homeScore}
+                        key={index}
+                        visitorAbbreviation={game.visitorAbbreviation}
+                        visitorScore={game.visitorScore}
+                      />
+                    )
+                    :
+                    null
+                ))
+              }
             </Modal>
         }
         <div>
@@ -103,7 +130,7 @@ const CardList = () => {
                   abbreviation={team.abbreviation}
                   key={uuid()}
                   name={team.name}
-                  toggle={() => handleMultiple(team)}
+                  toggle={() => handleMultiple(team.abbreviation)}
                 />
               ))
             }
