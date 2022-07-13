@@ -3,17 +3,17 @@ import React from "react";
 interface Props {
   abbreviation: string;
   name: string;
-  toggleOpen: any;
+  toggle: any;
 }
 
-const Card = ({abbreviation, name, toggleOpen}: Props) => {
+const Card = ({abbreviation, name, toggle}: Props) => {
   return (
     <li
       className="
       border-grey-500
       border-2
       cursor-pointer"
-      onClick={toggleOpen}
+      onClick={toggle}
     >
       <div>
         <section>

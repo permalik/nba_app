@@ -3,25 +3,38 @@ import {useEffect, useState} from "react";
 import GameService from "../../../services/GameService";
 
 interface Props {
-  // item: any;
-  toggleOpen: any;
+  children?: any;
+  date?: any;
+  homeAbbreviation?: any;
+  homeScore?: any;
+  toggleOpen?: any;
+  visitorAbbreviation?: any;
+  visitorScore?: any;
 }
 
-const Modal = ({ toggleOpen}: Props) => {
-  const [games, setGames] = useState([]);
-  useEffect(() => {
-    retrieveGames();
-  }, []);
-  const retrieveGames = () => {
-    GameService.getGames()
-      .then(response => {
-        setGames(response.data.data);
-        console.log(response.data.data);
-      })
-      .catch(error => {
-        console.log(error);
-      });
-  };
+const Modal = ({
+                 children,
+                 date,
+                 homeAbbreviation,
+                 homeScore,
+                 toggleOpen,
+                 visitorAbbreviation,
+                 visitorScore
+               }: Props) => {
+  // const [games, setGames] = useState([]);
+  // useEffect(() => {
+  //   retrieveGames();
+  // }, []);
+  // const retrieveGames = () => {
+  //   GameService.getGames()
+  //     .then(response => {
+  //       setGames(response.data.data);
+  //       console.log(response.data.data);
+  //     })
+  //     .catch(error => {
+  //       console.log(error);
+  //     });
+  // };
 
   return (
     <div
@@ -82,19 +95,47 @@ const Modal = ({ toggleOpen}: Props) => {
           </div>
           <div
             className="
+            flex
+            flex-col
             modal-body
             relative
             p-4"
           >
-            {
-              games &&
-              games.map((game: any, index: number) => (
-                <div key={uuid()}>
-                  <p>home:</p>
-                  {game.id}
-                </div>
-              ))
-            }
+            {children}
+            {/*{*/}
+            {/*  games &&*/}
+            {/*  games.map((game: any, index: number) => (*/}
+            {/*    game.home_team.abbreviation === `${home}`*/}
+            {/*      ?*/}
+            {/*      (*/}
+            {/*        <div key={uuid()}>*/}
+            {/*          <p>*/}
+            {/*            home:<span>{game.home_team.abbreviation}</span>*/}
+            {/*          </p>*/}
+            {/*          {game.home_team_score}*/}
+            {/*        </div>*/}
+            {/*      )*/}
+            {/*      :*/}
+            {/*      null*/}
+            {/*  ))*/}
+            {/*}*/}
+            {/*{*/}
+            {/*  games &&*/}
+            {/*  games.map((game: any, index: number) => (*/}
+            {/*    game.visitor_team.abbreviation === `${visitor}`*/}
+            {/*      ?*/}
+            {/*      (*/}
+            {/*        <div>*/}
+            {/*          <p>*/}
+            {/*            visitor:<span>{game.visitor_team.abbreviation}</span>*/}
+            {/*          </p>*/}
+            {/*          {game.visitor_team_score}*/}
+            {/*        </div>*/}
+            {/*      )*/}
+            {/*      :*/}
+            {/*      null*/}
+            {/*  ))*/}
+            {/*}*/}
           </div>
           <div
             className="modal-footer flex flex-shrink-0 flex-wrap items-center justify-end p-4 border-t border-gray-200 rounded-b-md">
