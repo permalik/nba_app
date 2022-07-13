@@ -6,4 +6,4 @@ NBA2012 is a tool that allows basketball fans to view various metrics.
 
 ## Using NBA2012
 
-Click < here > to navigate to the application.
+Click https://calvient-nba.netlify.app/ to navigate to the application.
