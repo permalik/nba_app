@@ -7,10 +7,12 @@ interface Props {
 
 const Layout = ({children}: Props) => {
   return (
-    <>
+    <div className='
+    min-h-screen
+    w-full'>
       <Header/>
       {children}
-    </>
+    </div>
   );
 };
 
