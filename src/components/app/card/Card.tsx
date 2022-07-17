@@ -12,20 +12,22 @@ const Card = ({abbreviation, name, toggle}: Props) => {
       className="
       cursor-pointer
       min-w-sm
+      px-3
+      py-2
+      rounded-md
       shadow-current
-      shadow-sm
-      text-slate-300"
+      shadow-sm"
       onClick={toggle}
     >
       <div>
         <section>
           <div>
-            <p>
+            <p className="text-slate-300">
               {abbreviation}
             </p>
           </div>
         </section>
-        <h2>
+        <h2 className="text-slate-300">
           {name}
         </h2>
       </div>

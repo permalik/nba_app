@@ -122,7 +122,8 @@ const CardList = () => {
             <ul className='
             flex
             flex-row
-            flex-wrap'>
+            flex-wrap
+            gap-3'>
               {
                 teams.map((team: any, index: number) => (
                   <Card
