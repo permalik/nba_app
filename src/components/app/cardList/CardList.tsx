@@ -93,7 +93,10 @@ const CardList = () => {
 
     return (
       <section>
-        <div>
+        <div className="
+        flex
+        flex-nowrap
+        flex-row">
           {
             isShown
             &&
@@ -119,11 +122,13 @@ const CardList = () => {
               </Modal>
           }
           <div>
-            <ul className='
+            <ul className="
             flex
             flex-row
             flex-wrap
-            gap-3'>
+            items-center
+            justify-center
+            gap-3">
               {
                 teams.map((team: any, index: number) => (
                   <Card

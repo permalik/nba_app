@@ -8,7 +8,7 @@ interface Props {
 const Layout = ({children}: Props) => {
   return (
     <div className='
-    bg-slate-900
+    bg-primary
     min-h-screen
     w-full'>
       <Header/>
