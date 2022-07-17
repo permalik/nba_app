@@ -7,15 +7,17 @@ module.exports = {
         colors: {
             // nba red
             'main': '#C9082A',
-            // blue-400
+            // grey-600
             'primary': '#191919',
-            // blue-300
-            'secondary': '#636363',
-            // blue-200
-            'tertiary': '#DBDBDB',
-            // blue-100
-            'quaternary': '#D1D1D1',
-            // grey-000
+            // grey-500
+            'secondary': '#4C4C4C',
+            // grey-400
+            'tertiary': '#636363',
+            // grey-300
+            'quaternary': '#DBDBDB',
+            // grey-200
+            'quinary': '#D1D1D1',
+            // grey-100
             'complementary': '#E0E1DD',
             'accent': ''
         },

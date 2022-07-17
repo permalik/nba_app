@@ -10,7 +10,7 @@ const Card = ({abbreviation, name, toggle}: Props) => {
   return (
     <li
       className="
-      bg-tertiary
+      bg-secondary
       cursor-pointer
       min-w-sm
       px-5
@@ -27,20 +27,20 @@ const Card = ({abbreviation, name, toggle}: Props) => {
       justify-between">
         <div>
           <div className="
-          bg-secondary
+          bg-complementary
           flex
           flex-row
           items-center
           justify-center
           rounded-full"
                style={{height: "50px", width: "50px"}}>
-            <p className="text-complementary">
+            <p className="text-primary">
               {abbreviation}
             </p>
           </div>
         </div>
         <div>
-          <h2 className="text-primary">
+          <h2 className="text-quaternary">
             {name}
           </h2>
         </div>
