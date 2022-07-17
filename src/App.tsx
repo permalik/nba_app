@@ -6,7 +6,10 @@ import "./styles/index.css";
 const App = () => {
   return (
     <Layout>
-      <main>
+      <main className="
+      container
+      min-w-sm
+      mx-auto">
         <CardList/>
       </main>
     </Layout>

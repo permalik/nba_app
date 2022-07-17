@@ -10,9 +10,11 @@ const Card = ({abbreviation, name, toggle}: Props) => {
   return (
     <li
       className="
-      border-grey-500
-      border-2
-      cursor-pointer"
+      cursor-pointer
+      min-w-sm
+      shadow-current
+      shadow-sm
+      text-slate-300"
       onClick={toggle}
     >
       <div>

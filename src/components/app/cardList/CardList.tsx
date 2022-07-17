@@ -119,7 +119,10 @@ const CardList = () => {
               </Modal>
           }
           <div>
-            <ul>
+            <ul className='
+            flex
+            flex-row
+            flex-wrap'>
               {
                 teams.map((team: any, index: number) => (
                   <Card
