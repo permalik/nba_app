@@ -9,6 +9,10 @@ module.exports = {
             'main': '#C9082A',
             // grey-600
             'primary': '#191919',
+            // grey-575
+            'cardFocus': '#3B3B3B',
+            // grey-550
+            'cardHover': '#444444',
             // grey-500
             'secondary': '#4C4C4C',
             // grey-400

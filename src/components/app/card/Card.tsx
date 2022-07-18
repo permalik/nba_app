@@ -12,6 +12,7 @@ const Card = ({abbreviation, name, toggle}: Props) => {
       className="
       bg-secondary
       cursor-pointer
+      hover:bg-cardHover
       min-w-sm
       px-5
       py-4

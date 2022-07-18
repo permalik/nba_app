@@ -14,6 +14,7 @@ const Modal = ({
       modal
       mx-auto
       fade
+      bg-white
       fixed
       w-3/6
       h-full
@@ -47,6 +48,7 @@ const Modal = ({
           <div
             className="
             modal-header
+            bg-white
             flex
             flex-shrink-0
             items-center
