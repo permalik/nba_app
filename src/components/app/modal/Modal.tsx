@@ -21,11 +21,11 @@ const Modal = ({
     >
       <div
         className={`
+        bg-white
         relative
         w-auto
         rounded-md
         pointer-events-none`}
-        style={{background: "white"}}
       >
         <div
           className="
@@ -37,8 +37,7 @@ const Modal = ({
           w-full
           pointer-events-auto
           outline-none
-         text-current
-         z-50"
+         text-current"
         >
           <div
             className="
@@ -75,9 +74,10 @@ const Modal = ({
             className="flex flex-shrink-0 flex-wrap items-center justify-end p-4 border-t border-gray-200 rounded-b-md">
             <button
               className="
+              bg-red-500
               px-6
               py-2.5
-              bg-red-500
+              bg-secondary
               text-white
               font-medium
               text-xs
@@ -85,13 +85,15 @@ const Modal = ({
               uppercase
               rounded
               shadow-md
-              hover:bg-red-600 hover:shadow-lg
+              hover:bg-red-600
+              hover:shadow-lg
               focus:bg-red-600 focus:shadow-lg focus:outline-none focus:ring-0
               active:bg-red-800 active:shadow-lg
               transition
               duration-150
               ease-in-out"
               onClick={toggleOpen}
+              // style={{background: "red"}}
               type="button"
             >
               Close
