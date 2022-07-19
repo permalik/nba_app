@@ -92,35 +92,39 @@ const CardList = () => {
     }, []);
 
     return (
-      <section>
+      <section className='
+      flex
+      flex-col
+      items-center
+      justify-center'>
+        {
+          isShown
+          &&
+            <Modal toggleOpen={handleClick}>
+              {
+                games.map((game: any, index: number) => (
+                  team === game.homeAbbreviation
+                    ?
+                    (
+                      <Content
+                        date={game.date}
+                        homeAbbreviation={game.homeAbbreviation}
+                        homeScore={game.homeScore}
+                        key={index}
+                        visitorAbbreviation={game.visitorAbbreviation}
+                        visitorScore={game.visitorScore}
+                      />
+                    )
+                    :
+                    null
+                ))
+              }
+            </Modal>
+        }
         <div className="
         flex
         flex-nowrap
         flex-row">
-          {
-            isShown
-            &&
-              <Modal toggleOpen={handleClick}>
-                {
-                  games.map((game: any, index: number) => (
-                    team === game.homeAbbreviation
-                      ?
-                      (
-                        <Content
-                          date={game.date}
-                          homeAbbreviation={game.homeAbbreviation}
-                          homeScore={game.homeScore}
-                          key={index}
-                          visitorAbbreviation={game.visitorAbbreviation}
-                          visitorScore={game.visitorScore}
-                        />
-                      )
-                      :
-                      null
-                  ))
-                }
-              </Modal>
-          }
           <div>
             <ul className="
             flex

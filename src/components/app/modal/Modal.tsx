@@ -11,10 +11,7 @@ const Modal = ({
   return (
     <div
       className="
-      modal
       mx-auto
-      fade
-      bg-white
       fixed
       w-3/6
       h-full
@@ -23,15 +20,15 @@ const Modal = ({
       overflow-y-auto"
     >
       <div
-        className="
-        modal-dialog
+        className={`
         relative
         w-auto
-        pointer-events-none"
+        rounded-md
+        pointer-events-none`}
+        style={{background: "white"}}
       >
         <div
           className="
-          modal-content
           border-none
           shadow-lg
           relative
@@ -39,15 +36,12 @@ const Modal = ({
           flex-col
           w-full
           pointer-events-auto
-          bg-white
-          bg-clip-padding
-          rounded-md
           outline-none
-         text-current"
+         text-current
+         z-50"
         >
           <div
             className="
-            modal-header
             bg-white
             flex
             flex-shrink-0
@@ -56,7 +50,8 @@ const Modal = ({
             p-4
             border-b
             border-gray-200
-            rounded-t-md"
+            rounded-t-md
+            z-50"
           >
             <h3 className="
             text-xl
@@ -71,14 +66,13 @@ const Modal = ({
             className="
             flex
             flex-col
-            modal-body
             relative
             p-4"
           >
             {children}
           </div>
           <div
-            className="modal-footer flex flex-shrink-0 flex-wrap items-center justify-end p-4 border-t border-gray-200 rounded-b-md">
+            className="flex flex-shrink-0 flex-wrap items-center justify-end p-4 border-t border-gray-200 rounded-b-md">
             <button
               className="
               px-6
