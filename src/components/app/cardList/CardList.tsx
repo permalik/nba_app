@@ -95,8 +95,7 @@ const CardList = () => {
       <section className="
       flex
       flex-col
-      items-center
-      justify-center">
+      items-center">
         {
           isShown
           &&

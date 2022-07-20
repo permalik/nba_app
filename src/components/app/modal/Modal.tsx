@@ -11,8 +11,12 @@ const Modal = ({
   return (
     <div
       className="
-      mx-auto
       fixed
+      flex
+      flex-col
+      items-center
+      justify-center
+      mx-auto
       w-3/6
       h-full
       outline-none
@@ -23,7 +27,7 @@ const Modal = ({
         className={`
         bg-white
         relative
-        w-auto
+        w-full
         rounded-md
         pointer-events-none`}
       >
