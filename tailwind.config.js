@@ -30,6 +30,9 @@ module.exports = {
             minWidth: {
                 'sm': '300px'
             },
+            padding: {
+                'modal': '5vw'
+            }
         },
 
     },

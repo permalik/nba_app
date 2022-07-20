@@ -19,6 +19,7 @@ const Modal = ({
       mx-auto
       w-3/6
       h-full
+      min-w-sm
       outline-none
       overflow-x-hidden
       overflow-y-auto"
@@ -69,8 +70,10 @@ const Modal = ({
             className="
             flex
             flex-col
+            gap-5
             relative
-            p-4"
+            px-8
+            py-4"
           >
             {children}
           </div>
